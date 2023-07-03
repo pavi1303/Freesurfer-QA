@@ -52,9 +52,9 @@ The last step is to form one QA HTML file per subject. Here, input the location 
 ### Freeview tool snapshot structure
 ![Freeview snapshot structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/Freeview%20snapshot%20structure.png)
 ### QA HTML structure
-![QA html structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/QA%20html%20structure.png)
+![QA HTML structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/QA%20html%20structure.png)
 
 ## Contact and software version
 <a name="Contact-and-software-version"></a>
-1. If you have any questions, or improvement suggestions you might have please reach out to pavithran.giriprakash@gmail.com
+1. If you have any questions, or suggestions you might have please reach out to pavithran.giriprakash@gmail.com
 2. Freesurfer 7.3.2 and Python 3.8.10 were used in the above process. 
