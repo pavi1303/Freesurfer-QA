@@ -14,8 +14,8 @@ Contains all the bash scripts and python scripts to perform the Freesurfer QA an
 <a name="Requirements"></a>
 1. [Freesurfer v6 and later](https://surfer.nmr.mgh.harvard.edu/pub/dist/)
 2. Python 3 any stable version.
-3. [QA-tools new](https://github.com/Deep-MI/fsqc)
-4. [QAtools old](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools)
+3. [QA-tools new](https://github.com/Deep-MI/fsqc) and its dependencies
+4. [QAtools old](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools) and its dependencies
    
 ## Bash scripts
 <a name="Bash-scripts"></a>
