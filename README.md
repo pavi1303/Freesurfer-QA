@@ -58,7 +58,7 @@ The last step is to form one QA HTML file per subject. Here, input the location 
 ![QA HTML structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/QA%20html%20structure.png)
 ### stats csv structure
 ![stats structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/stats%20structure.png)
-##References
+## References
 <a name="References"></a>
 1. [Freesurfer wiki](https://surfer.nmr.mgh.harvard.edu/fswiki) - Contains all the necessary information including installation instructions, tutorials, and other relevant documentation.
 2. [Recon-all output description](https://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllTableStableV6.0) - Holds a detailed description of all the input and output files obtained at every step of the recon-all pipeline. It has been updated only until v6 on the Freesurfer website.
