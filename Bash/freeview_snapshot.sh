@@ -11,14 +11,14 @@ echo "Forming snapshots for the subjects in  $FS_OUTPUT_DIR"
 subname=($(find "$FS_OUTPUT_DIR" -maxdepth 1 -type d -regex ".*/[0-9]+.*" -exec basename {} \;))
 for subid in "${subname[@]}";do
 	# Create the required directories if they do not exist
-	dir=("${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid/whitematter"\
-	 "${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid/skullstrip"\
-	  "${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid/normalized"\
-	   "${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid/aseg"\
-	    "${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid/talaraich"\
-		 "${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid/inflated"\
-		  "${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid/curv"\
-		   "${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid/parc")
+	dir=("${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid/whitematter"\
+	 "${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid/skullstrip"\
+	  "${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid/normalized"\
+	   "${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid/aseg"\
+	    "${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid/talaraich"\
+		 "${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid/inflated"\
+		  "${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid/curv"\
+		   "${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid/parc")
 
     for folder in "${dir[@]}";do
 		if [ -d "${folder}" ]; then
@@ -75,7 +75,7 @@ for subid in "${subname[@]}";do
 	xvfb-run -a -e /dev/null freeview -f surf/rh.orig:annot=label/rh.aparc.annot -cam elevation 270 -viewport 3d -ras 0 0 0 -layout 1 -nocursor -ss ${dir[7]}/parc_rh_inf.png -quit
 	
 	echo "Completed taking screenshots for subject: $subid" 
-	find "${FS_OUTPUT_DIR}/QA_results_$current_date/QA_screenshots/$subid" -type d -empty -delete
+	find "${FS_OUTPUT_DIR}/QA_results_$current_date/${QA_FOLDER_NAME}_QA/QA_screenshots/$subid" -type d -empty -delete
 done
 
 # COMMENTS
