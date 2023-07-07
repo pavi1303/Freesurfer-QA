@@ -6,7 +6,7 @@ def create_html_qa(qa_ss_dir):
     global os
     sublist = [sub.name for sub in os.scandir(qa_ss_dir) if sub.is_dir()]
     for sub in sublist:
-        html_filename = f"QA_{sub}.html"
+        html_filename = f"QA_{sub}_{os.path.basename(os.path.dirname(qa_ss_dir))}.html"
         html_savepath = os.path.join(os.path.dirname(qa_ss_dir), 'QA_html')
         if not os.path.exists(html_savepath):
             os.makedirs(html_savepath)
@@ -70,5 +70,8 @@ def create_html_qa(qa_ss_dir):
             html_file.write("</body>\n</html>\n")
 
 
-ss_dir = r'W:\ADRC_QA\v1\fs_output_07032023\QA_results_07032023\QA_screenshots'
+# Prior QA directory
+ss_dir = r'W:\ADRC_QA\fs_output\fs_output_07062023\QA_results_07072023\prior_QA\QA_screenshots'
+# Post QA directory
+# ss_dir = r'W:\ADRC_QA\fs_output\fs_output_07062023\QA_results_07072023\post_QA\QA_screenshots'
 create_html_qa(ss_dir)
