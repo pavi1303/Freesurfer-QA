@@ -46,17 +46,18 @@ The last step is to form one QA HTML file per subject. Here, input the location 
 ## Input directory
 ![Input file structure with NIFTI files](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/input%20structure.png)
 ## Output directory
-### Overall output structure showing Freesurfer output and QA_results folder
-![Overall output structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/Overall%20QA%20output%20structure.png)
+### Overall output structure showing prior, post QA results and stats csv for post QA
+![Overall output structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/Overall%20output%20structure%201.png)
 ### recon-all output structure
 ![Overall output structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/recon-all%20output%20structure.png)
-### Overall QA output structure showing the calculated features, screenshots, and HTML
-![Overall QA output structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/Overall%20QA%20output%20structure.png)
+### Overall QA output structure showing the calculated features, screenshots, and HTML for both prior and post QA
+![Overall QA output structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/Overall%20output%20structure%202.png)
 ### Freeview tool snapshot structure
 ![Freeview snapshot structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/Freeview%20snapshot%20structure.png)
 ### QA HTML structure
 ![QA HTML structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/QA%20html%20structure.png)
-
+### stats csv structure
+![stats structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/stats%20structure.png)
 ##References
 <a name="References"></a>
 1. [Freesurfer wiki](https://surfer.nmr.mgh.harvard.edu/fswiki) - Contains all the necessary information including installation instructions, tutorials, and other relevant documentation.
