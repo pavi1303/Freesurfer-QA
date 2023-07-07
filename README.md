@@ -4,6 +4,7 @@
 - [Bash scripts](#Bash-scripts)
 - [Python scripts](#Python-scripts)
 - [Usage](#Usage)
+- [References](#References)
 - [Contact and software version](#Contact-and-software-version)
 
 # Introduction
@@ -14,19 +15,21 @@ Contains all the bash scripts and python scripts to perform the Freesurfer QA an
 <a name="Requirements"></a>
 1. [Freesurfer v6 and later](https://surfer.nmr.mgh.harvard.edu/pub/dist/)
 2. Python 3 any stable version.
-3. [QA-tools new](https://github.com/Deep-MI/fsqc) and its dependencies
-4. [QAtools old](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools) and its dependencies
+3. [QA-tools python](https://github.com/Deep-MI/fsqc) and its dependencies
+4. [QAtools](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools) and its dependencies
    
 ## Bash scripts
 <a name="Bash-scripts"></a>
 ### Main script
-1. ***freesurfer_run_main.sh*** - Main bash script that will run the entire Freesurfer pipeline. All it needs is the input folder location with the T1 files.
+1. ***freesurfer_run_part1.sh*** - Runs the Freesurfer recon-all pipeline and then records the presence of any hard failures.
+2. ***freesurfer_run_part2.sh*** - This performs the QA analysis (old and new), takes screenshots, and then generates the stats file that hosts all the volumetric measurements. This forms two folders - prior or post QA depending on the status of the QA completion.
 ### Auxiliary scripts
 1. ***fs_recon.sh*** - Runs the Freesurfer recon-all pipeline for all the NIFTI images in the input folder.
 2. ***fs_hard_failure_check.sh*** - Extracts the recon-all-status.log file for all the subjects run through the Freesurfer pipeline and appends the result to a .txt file.
 3. ***freeview_snapshot.sh*** - Scroll through all the subjects to generate screenshots of different processes in the recon-all pipeline (intensity normalization, skull stripping, white matter segmentation, cortical segmentation, etc.). This uses the latest freeview tool to create and save the screenshots instead of using Tksurfer or Tkmedit.
 4. ***fs_qa_new.sh*** - This uses the latest [QA-tools python](https://github.com/Deep-MI/fsqc) to compute the various features like SNR, number of holes, etc., The screenshots module is not used since we already obtain them using freeview, only the features are calculated.
 5. ***fs_qa_old.sh*** - Calculates the SNR and similar features using the old [QAtools](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools) that was originally developed for Freesurfer V5.3. This tool is currently deprecated but I'm calculating the features to see how far off they're compared to the newer python equivalent used in *fs_qa_new.sh*
+6. ***gen_stats_csv.sh*** - This creates a csv file with all the volumetric measurements (area, curvature, volume). This file is only run after the QA process and thus will be present only in the post QA folder. 
 
 ## Python scripts
 <a name="Python-scripts"></a>
@@ -53,6 +56,13 @@ The last step is to form one QA HTML file per subject. Here, input the location 
 ![Freeview snapshot structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/Freeview%20snapshot%20structure.png)
 ### QA HTML structure
 ![QA HTML structure](https://github.com/pavi1303/Freesurfer-QA/blob/main/images/QA%20html%20structure.png)
+
+##References
+<a name="References"></a>
+1. [Freesurfer wiki](https://surfer.nmr.mgh.harvard.edu/fswiki) - Contains all the necessary information including installation instructions, tutorials, and other relevant documentation.
+2. [Recon-all output description](https://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllTableStableV6.0) - Holds a detailed description of all the input and output files obtained at every step of the recon-all pipeline. It has been updated only until v6 on the Freesurfer website.
+3. [QAtools](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools) - QA tools originally developed for Freesurfer v5.3 and is currently deprecated. Nevertheless, it performs a comprehensive QA analysis.
+4. [QA-tools python](https://github.com/Deep-MI/fsqc) - Latest QA tools for Freesurfer > v6 based on python. It doesn't provide a comprehensive set of screenshots unlike the [QAtools](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools).
 
 ## Contact and software version
 <a name="Contact-and-software-version"></a>
